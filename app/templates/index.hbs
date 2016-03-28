@@ -1,0 +1,11 @@
+<h1> index </h1>
+{{link-to 'open'   'index' (query-params status="open")}}
+{{link-to 'closed' 'index' (query-params status="closed")}}
+
+<ul>
+  {{#each model as |pull|}}
+    <li>{{pull.number}} - {{pull.status}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}
