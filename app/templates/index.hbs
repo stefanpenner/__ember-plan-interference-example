@@ -1,4 +1,4 @@
-<h1> index </h1>
+Router baked (does async/plan interference correct)
 {{link-to 'open'   'index' (query-params status="open")}}
 {{link-to 'closed' 'index' (query-params status="closed")}}
 
@@ -8,4 +8,18 @@
 {{/each}}
 </ul>
 
-{{outlet}}
+<hr>
+Our custom (does NOT do async/plan interference correct)
+
+close is instance, open takes 1 second. If we click on close -> open -> close, we will see
+
+close -> open (but we should see close -> open -> close)
+
+{{sorting-component}}
+
+<hr>
+Our custom (DOESdo async/plan interference correct)
+
+close is instance, open takes 1 second. If we click on close -> open -> close, we will see: close
+
+{{sorting-component-fixed}}

@@ -1,0 +1,14 @@
+<a href="#" onclick={{action "open"}}>open</a>
+<a href="#" onclick={{action "close"}}>close</a>
+
+{{#if isLoading}}
+  loading...
+{{/if}}
+
+<ul>
+  {{#each model as |pull|}}
+    <li>{{pull.number}} - {{pull.status}}</li>
+{{/each}}
+</ul>
+
+{{yield}}
